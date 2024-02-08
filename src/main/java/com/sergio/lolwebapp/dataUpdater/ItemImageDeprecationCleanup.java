@@ -13,6 +13,10 @@ public class ItemImageDeprecationCleanup {
     final static String ITEM_IMAGES_FOLDER_PATH = "src/main/resources/static/itemImages/";
     final static String ITEM_JSON_FILE_PATH = "src/main/resources/static/item.json";
     public static void main(String[] args) {
+        deletePngsNotInItemJsonFile();
+    }
+
+    private static void deletePngsNotInItemJsonFile(){
         Set<String> itemIds = getItemIdsFromJson();
 
         File folder = new File(ITEM_IMAGES_FOLDER_PATH);
