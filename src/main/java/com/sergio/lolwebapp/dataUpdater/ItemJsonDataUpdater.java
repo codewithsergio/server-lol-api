@@ -14,7 +14,7 @@ import java.util.Map;
 
 @Log
 // THIS FILE CALLS RIOT API AND REMOVES UNWANTED INFORMATION
-// (SUCH AS DEPRECATED ITEMS) FROM THE JSON
+// (SUCH AS DEPRECATED ITEMS IDS) FROM THE JSON
 public class ItemJsonDataUpdater {
     // Make sure to use latest version link for item json
     final static String ITEM_DATA_LOL_API_URL_STRING = "https://ddragon.leagueoflegends.com/cdn/14.3.1/data/en_US/item.json";
