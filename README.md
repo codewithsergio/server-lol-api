@@ -22,8 +22,9 @@ image, name, and description from API endpoint
   - Store user information in database
   - Cache user login in browser for fewer requests to server
 - Allow user to search for players
-  - Player pages will show profile image, name, and level
+  - Player pages will show profile image, name, and level at the top
   - Show recent games
     - All players in that game (name and champion image) and what
     team they were in
+    - KDA, CS, other data per player
     - Win or lose for player

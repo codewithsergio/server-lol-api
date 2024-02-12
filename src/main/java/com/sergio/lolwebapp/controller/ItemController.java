@@ -1,6 +1,7 @@
 package com.sergio.lolwebapp.controller;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.sergio.lolwebapp.entity.DataProperty;
 import lombok.extern.java.Log;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;

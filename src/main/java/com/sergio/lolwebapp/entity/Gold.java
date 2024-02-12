@@ -1,4 +1,4 @@
-package com.sergio.lolwebapp.controller;
+package com.sergio.lolwebapp.entity;
 
 import java.util.Map;
 
@@ -14,14 +14,7 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @Builder
 @JsonIgnoreProperties(ignoreUnknown = true)
-public class DataProperty {
-    public Map<String, Item> getData() {
-        return data;
-    }
-
-    public void setData(Map<String, Item> data) {
-        this.data = data;
-    }
-
-    private Map<String, Item> data;
+public class Gold {
+    private int total;
+    private int sell;
 }

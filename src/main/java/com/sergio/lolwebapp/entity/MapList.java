@@ -1,4 +1,4 @@
-package com.sergio.lolwebapp.controller;
+package com.sergio.lolwebapp.entity;
 
 import java.util.Map;
 

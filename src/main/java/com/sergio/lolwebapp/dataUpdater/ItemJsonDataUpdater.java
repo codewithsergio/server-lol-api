@@ -2,8 +2,8 @@ package com.sergio.lolwebapp.dataUpdater;
 
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.sergio.lolwebapp.controller.DataProperty;
-import com.sergio.lolwebapp.controller.Item;
+import com.sergio.lolwebapp.entity.DataProperty;
+import com.sergio.lolwebapp.entity.Item;
 import lombok.extern.java.Log;
 
 import java.io.*;
@@ -52,7 +52,7 @@ public class ItemJsonDataUpdater {
                        Item item = objectMapper.treeToValue(itemNode, Item.class);
                        filteredItems.put(itemId, item);
                    } catch (IOException e) {
-                       log.warning("Error processing item: " + itemId);
+                       System.err.println("Error parsing item...");
                    }
                }
            });
