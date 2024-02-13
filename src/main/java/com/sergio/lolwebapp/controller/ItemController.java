@@ -14,7 +14,8 @@ import java.io.IOException;
 public class ItemController {
     @GetMapping(path = "/items")
     public DataProperty items() throws IOException {
-
+        // TODO: delete old items still in API, such as Liandry's Lament
+        //      can delete them by not including them by their ID such as 3001
         String ourJsonFilePath = "src/main/resources/static/item.json";
         ObjectMapper objectMapper = new ObjectMapper();
         return objectMapper.readValue(new File(ourJsonFilePath), DataProperty.class);

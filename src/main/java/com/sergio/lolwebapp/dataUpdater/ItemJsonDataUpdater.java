@@ -10,7 +10,9 @@ import java.io.*;
 import java.net.HttpURLConnection;
 import java.net.URL;
 import java.util.HashMap;
+import java.util.HashSet;
 import java.util.Map;
+import java.util.Set;
 
 @Log
 // THIS FILE CALLS RIOT API AND REMOVES UNWANTED INFORMATION
@@ -41,6 +43,13 @@ public class ItemJsonDataUpdater {
        if (dataNode != null && dataNode.isObject()) {
            dataNode.fields().forEachRemaining(entry -> {
                String itemId = entry.getKey();
+               // Do not include items with id starting with 7
+               // These are all deprecated items
+               int integerItemId = Integer.parseInt(itemId);
+               if(integerItemId < 8000 && integerItemId >= 7000) {
+                   System.err.print("Deleting: " + integerItemId);
+                   return;
+               }
                JsonNode itemNode = entry.getValue();
                // IN-GAME ITEM CRITERIA: maps:11 is true, or maps:11 isn't false,
                // or maps:11 is true and inStore doesn't exist
