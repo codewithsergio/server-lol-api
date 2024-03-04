@@ -59,6 +59,7 @@ public class ItemJsonDataUpdater {
                if (isInMap && !inStore) {
                    try {
                        Item item = objectMapper.treeToValue(itemNode, Item.class);
+                       item.setId(itemId); // Add the items key to the item for jmespath parsing
                        filteredItems.put(itemId, item);
                    } catch (IOException e) {
                        System.err.println("Error parsing item...");

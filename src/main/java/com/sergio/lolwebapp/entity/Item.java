@@ -16,6 +16,7 @@ import lombok.NoArgsConstructor;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class Item {
+    private String id;
     private String name;
     private String description;
     private String plaintext;
@@ -29,6 +30,14 @@ public class Item {
     @JsonProperty("maps")
     private void unpackMaps(Map<Integer, Object> isMaps) {
         this.isMaps = (boolean)isMaps.get(11);
+    }
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
     }
 
     public Boolean isInStore() {
